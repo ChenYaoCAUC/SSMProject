@@ -1,7 +1,5 @@
 package com.chenyao.ssmproject.user.service;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,11 +11,28 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private UserMapper dao;
 	@Override
-	public List<User> signin(User user) {
-		return dao.signin(user);
-	}
 	public int signup(User user) {
 		return dao.signup(user);
+	}
+	@Override
+	public int signupauthority(String username) {
+		// TODO Auto-generated method stub
+		return dao.signupauthority(username);
+	}
+	@Override
+	public int signup_info(String username) {
+		// TODO Auto-generated method stub
+		return dao.signup_info(username);
+	}
+	@Override
+	public int updatepeople(String username, int sex, String introduction) {
+		// TODO Auto-generated method stub
+		return dao.updatepeople(username, sex, introduction);
+	}
+	@Override
+	public int updateimage(String username, String avatar) {
+		// TODO Auto-generated method stub
+		return dao.updateimage(username, avatar);
 	}
 
 }

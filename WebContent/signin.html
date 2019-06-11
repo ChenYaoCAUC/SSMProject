@@ -6,12 +6,15 @@
 </head>
 <link href="/SSMProject/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <body>
+<div id="error"></div>
 	<div class="container">
 		<h1>欢迎使用</h1><br/>
-		<input id="username" /><br/>
-		<input id="password" /><br/>
-		<button class="btn btn-primary" onclick="signin()">登录</button>
-		<a class="btn btn-success" href="/SSMProject/signup.html" role="button">注册</a>
+		<form method="post" action="login">
+		<input id="username" type=text name='username'/><br/>
+		<input id="password" type=password name='password'/></br>
+		<button class="btn btn-outline-primary" >登录</button>
+		<a class="btn btn-outline-success" href="/SSMProject/signup.html" role="button">注册</a>
+		</form>
 	</div>
 </body>
 <script src="/SSMProject/lib/jquery/jquery-3.3.1.min.js"></script>

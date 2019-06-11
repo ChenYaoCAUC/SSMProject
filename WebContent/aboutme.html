@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>我的资料</title>
+<link href="/SSMProject/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" >
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="btn-group">
+  <button type="button" class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    我的
+  </button>
+  <div class="dropdown-menu">
+    <a class="dropdown-item" href="/SSMProject/me.html">个人中心</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item" href="#">设置</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item"  href="/SSMProject/signin.html?logout=1">退出</a>
+  </div>
+</div>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" href="/SSMProject/hotsearch.html">热搜</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/SSMProject/articlerecommend.html">推荐</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/SSMProject/notice.html">关注</a>
+      </li>
+       <li class="nav-item">
+        <a class="btn btn-link" href="/SSMProject/index.html">返回首页</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search">
+      <button class="btn btn-primary" type="submit">搜索</button>
+    </form>
+  </div>
+</nav>
+    <div class="col-md-8 order-md-1">
+      <h4 class="mb-3">个人资料</h4>
+      <form class="needs-validation" novalidate>
+        <div class="mb-3">
+          <label for="introction">个性签名</label>
+          <div class="input-group">
+            <input id="introductioninput" type="text" class="form-control" id="introction" placeholder="个性签名" required>
+            <div class="invalid-feedback" style="width: 100%;">
+            </div>
+          </div>
+        </div>
+            <label for="sex">性别</label>
+            <select id="sexid" class="custom-select d-block w-100" required>
+             <option value="0">男</option>
+             <option value="1">女</option>
+            </select>
+           <form id="uploadForm" enctype="multipart/form-data" method="POST">
+        	<label>请上传头像~</label>
+        	 <div class="form-group">
+        <div style="text-align: top">
+            <input type="file" id="chooseImage" size="1" width="1px" name="file" accept="image/gif, image/jpg, image/png">
+            <img id="upload" src="" style="width: 40px; height: 40px; vertical-align: middle;" />
+             <button type="button" class="btn btn-primary" data-dismiss="modal" onclick=' uploadimage()'>选择</button>
+        </div>
+        	</div>
+        	<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#updatepeopleConfirmModal">更新个人资料</button>
+      		</form>
+        <hr class="mb-4">
+      </form>
+    </div>
+<!-- Modal -->
+<div class="modal fade" id="updatepeopleConfirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">提示</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       	 你确定要更新资料？
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">放弃</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" onclick=' updatepeople()'>提交</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="updateshowResultModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">提示</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="updateshowResultModalBody"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+<script src="/SSMProject/lib/jquery/jquery-3.3.1.min.js"></script>
+<script src="/SSMProject/lib/popper/popper.min.js"></script>
+<script src="/SSMProject/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="/SSMProject/js/updatepeople.js"></script>
+</html>

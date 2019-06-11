@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.chenyao.ssmproject.concern.dao.ConcernMapper">
+
+ <select id="selectcount"
+ 	resultType="java.lang.Integer" 
+ 	parameterType="com.chenyao.ssmproject.concern.model.ConcernModel">
+ 	select count(*) from concern where wasfuns=#{wasfuns} and follower=#{follower};
+</select>
+ <select id="selectnum"
+ 	resultType="java.lang.Integer" 
+ 	parameterType="com.chenyao.ssmproject.concern.model.ConcernModel">
+ 	select count(wasfuns) from concern where follower=#{follower};
+</select>
+</mapper>
