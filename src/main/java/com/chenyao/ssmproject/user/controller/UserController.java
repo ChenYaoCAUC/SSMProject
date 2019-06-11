@@ -87,15 +87,18 @@ public class UserController {
 	public Map<String, Object> onUpload(HttpServletRequest request,HttpServletResponse reponse) {
 		Map<String, Object> data = new HashMap<>();
 		//file:/C:/apache-tomcat-9.0.17/wtpwebapps/SSMProject/WEB-INF/classes/
-		String path = Thread.currentThread().getContextClassLoader().getResource("").toString();
+/*		String path = Thread.currentThread().getContextClassLoader().getResource("").toString();
 		path = path.replace("file:/", "");
-		path = path.replace("WEB-INF/classes/", "uploads/");
+		path = path.replace("WEB-INF/classes/", "uploads/");*/
+		String path = "C:/apache-tomcat-9.0.17/wtpwebapps/SSMProject/uploads/"+UUID.randomUUID()+"/";
 		try {
 			File file = resolveUploadFile((MultipartHttpServletRequest) request, path);
-			String avatar = "SSMProject/uploads/"+UUID.randomUUID().toString()+file.getName();
+			String pathe = path.replace("C:/apache-tomcat-9.0.17/wtpwebapps", "");
+			String avatar = pathe+file.getName();
 			service.updateimage(getAuthenticatedUsername().toString(),avatar);
 			data.put("status",Status.SUCCESS);
 			data.put("reason", "OK");
+			data.put("avatar", avatar);
 		} catch (IllegalStateException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

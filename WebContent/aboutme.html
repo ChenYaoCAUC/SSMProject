@@ -42,7 +42,7 @@
 </nav>
     <div class="col-md-8 order-md-1">
       <h4 class="mb-3">个人资料</h4>
-      <form class="needs-validation" novalidate>
+
         <div class="mb-3">
           <label for="introction">个性签名</label>
           <div class="input-group">
@@ -59,16 +59,15 @@
            <form id="uploadForm" enctype="multipart/form-data" method="POST">
         	<label>请上传头像~</label>
         	 <div class="form-group">
-        <div style="text-align: top">
+        	<div style="text-align: top">
             <input type="file" id="chooseImage" size="1" width="1px" name="file" accept="image/gif, image/jpg, image/png">
             <img id="upload" src="" style="width: 40px; height: 40px; vertical-align: middle;" />
-             <button type="button" class="btn btn-primary" data-dismiss="modal" onclick=' uploadimage()'>选择</button>
-        </div>
+             <button type="button" class="btn btn-primary" data-dismiss="modal" onclick='uploadimage()'>选择</button>
+       		 </div>
         	</div>
         	<button type="button" class="btn btn-outline-success" data-toggle="modal" data-target="#updatepeopleConfirmModal">更新个人资料</button>
       		</form>
         <hr class="mb-4">
-      </form>
     </div>
 <!-- Modal -->
 <div class="modal fade" id="updatepeopleConfirmModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

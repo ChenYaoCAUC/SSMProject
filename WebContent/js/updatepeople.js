@@ -29,10 +29,11 @@ function uploadimage(){
 	      processData: false,
 	      success: function (result) {
 	    	  if(result.status==0)
-	    		  {
-	    		  alert("上传成功！");
-	    		  } 
+	    	  {
+	    		 /* document.getElementById('upload').src = result.avatar;*/
+				  $('#upload').attr('src',result.avatar);
+	    	  } 
 	      }   	
-	});
+	});	
 }
 
