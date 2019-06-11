@@ -8,5 +8,11 @@ public class Status {
 	public static final int DB_ERROR=2;
 	//用户名或者密码错误
 	public static final int LOGIN_ERROR=3;	
+	//文件上传错误
+	public static final int FILEUPLOAD_ERROR=4;	
+	//访问拒绝错误
+	public static final int ACCESS_DENIED_ERROR=5;	
+	//注册失败
+	public static final int LOGINUP_ERROR=6;
 	
 }

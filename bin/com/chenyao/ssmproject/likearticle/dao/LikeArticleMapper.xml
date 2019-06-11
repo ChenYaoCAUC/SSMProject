@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.chenyao.ssmproject.likearticle.dao.LikeArticleMapper">
+
+ <select id="selectCount"
+ 	resultType="java.lang.Integer" 
+ 	parameterType="com.chenyao.ssmproject.likearticle.model.LikeArticle">
+ 	select count(*) from like_article where article_id=#{article_id} and username=#{username};
+</select>
+ <select id="selectLikeArticle"
+ 	resultType="java.lang.Integer" 
+ 	parameterType="com.chenyao.ssmproject.likearticle.model.LikeArticle">
+ 	select count(username) from like_article where article_id=#{article_id};
+</select>
+</mapper>

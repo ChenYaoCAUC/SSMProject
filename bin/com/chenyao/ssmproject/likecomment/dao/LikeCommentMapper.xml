@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.chenyao.ssmproject.likecomment.dao.LikeCommentMapper">
+
+ <select id="selectcount"
+ 	resultType="java.lang.Integer" 
+ 	parameterType="com.chenyao.ssmproject.likecomment.model.LikeComment">
+ 	select count(*) from like_comment where username=#{username} and comment_id=#{comment_id};
+</select>
+ <select id="select"
+ 	resultType="java.lang.Integer" 
+ 	parameterType="com.chenyao.ssmproject.likecomment.model.LikeComment">
+ 	select count(username) from like_comment where comment_id=#{comment_id};
+</select>
+</mapper>
