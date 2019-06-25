@@ -12,7 +12,7 @@ public class User {
 	public void setAvatar(String avatar) {
 		this.avatar = avatar;
 	}
-	private String introction;
+	private String introduction;
 	
 	public int getSex() {
 		return sex;
@@ -20,11 +20,12 @@ public class User {
 	public void setSex(int sex) {
 		this.sex = sex;
 	}
-	public String getIntroction() {
-		return introction;
+
+	public String getIntroduction() {
+		return introduction;
 	}
-	public void setIntroction(String introction) {
-		this.introction = introction;
+	public void setIntroduction(String introduction) {
+		this.introduction = introduction;
 	}
 	public String getEnabled() {
 		return enabled;

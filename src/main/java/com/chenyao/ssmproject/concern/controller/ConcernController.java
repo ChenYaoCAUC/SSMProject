@@ -53,7 +53,7 @@ public class ConcernController {
 		try {
 			List<String> users = service.selectwasfuns(concern);
 			data.put("status", Status.SUCCESS);
-			data.put("user", users);	
+			data.put("user", users);		
 		} catch (Exception e) {
 			// TODO: handle exception
 			data.put("status", Status.DB_ERROR);
@@ -71,17 +71,17 @@ public class ConcernController {
 		int count = selectcount(concern);
 		try {
 			if(count==0) {
-				if(concern.getWasfuns()!=follower)
+				if(!concern.getWasfuns().equals(follower))
 				{
 					service.insert(concern);
 					data.put("status", Status.SUCCESS);
 					data.put("reason", "关注成功！");
 				}else {
-					data.put("status", Status.PARAM_ERROR);
+					data.put("status", Status.SUCCESS);
 					data.put("reason", "不能关注自己！");
 				}
 			}else if(count>0) {
-				service.delete(follower);
+				service.delete(follower,concern.getWasfuns());
 				data.put("status", Status.SUCCESS);
 				data.put("reason", "取消关注！");
 			}else {

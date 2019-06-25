@@ -49,9 +49,15 @@ public class ArticleServiceImpl implements ArticleService {
 	}
 
 	@Override
-	public int delete(String uuid) {
+	public int delete(Article article) {
 		// TODO Auto-generated method stub
-		return dao.delete(uuid);
+		return dao.delete(article);
+	}
+
+	@Override
+	public List<Article> refreshByLike() {
+		// TODO Auto-generated method stub
+		return dao.refreshByLike();
 	}
 
 }

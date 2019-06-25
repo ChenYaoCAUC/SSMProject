@@ -25,11 +25,6 @@ public class ConcernServiceImpl implements ConcernService {
 		return dao.insert(concern);
 	}
 
-	@Override
-	public int delete(String follwer) {
-		// TODO Auto-generated method stub
-		return dao.delete(follwer);
-	}
 
 	@Override
 	public int selectcount(ConcernModel concern) {
@@ -47,6 +42,12 @@ public class ConcernServiceImpl implements ConcernService {
 	public Integer selectnum(ConcernModel concern) {
 		// TODO Auto-generated method stub
 		return dao.selectnum(concern);
+	}
+
+	@Override
+	public int delete(String follwer, String wasfuns) {
+		// TODO Auto-generated method stub
+		return dao.delete(follwer, wasfuns);
 	}
 
 }

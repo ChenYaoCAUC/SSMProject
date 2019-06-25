@@ -1,7 +1,10 @@
 package com.chenyao.ssmproject.user.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 import org.springframework.stereotype.Repository;
 
@@ -9,6 +12,14 @@ import com.chenyao.ssmproject.user.model.User;
 //´ú±ímapper
 @Repository
 public interface UserMapper {
+	@Select("select avatar from user_info where username = #{username};")
+	public List<User> getImage(@Param("username") String username);
+
+	/*
+	 * @Select("select introduction from user_info where username = #{username};")
+	 */
+	@Select("select introduction,sex from user_info where username= #{username};")
+	public List<User> getinfomation(@Param("username") String username);
 	@Insert("insert into users(username,password,enabled) values(#{username},#{password},1);")
 	public int signup(User user);
 	@Insert("INSERT INTO authorities(username, authority) VALUES (#{username}, 'authenticated');")

@@ -9,6 +9,7 @@ function getArgs(){
     return args;
 }
 $(function(){
+	$('#upload').attr('src',"/SSMProject/user/getImage?user=chenyao");
 	var args = getArgs();
 	if (typeof(args.id) == "undefined" || args.id == null) {
 	} else{

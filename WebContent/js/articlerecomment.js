@@ -17,4 +17,5 @@ function refresh(){
 		}		
 		$("#article").html(article);
 	});
+	$('#upload').attr('src',"/SSMProject/user/getImage?user=chenyao");
 }

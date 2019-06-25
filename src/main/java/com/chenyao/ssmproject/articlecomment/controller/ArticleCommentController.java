@@ -73,15 +73,11 @@ public class ArticleCommentController {
 			if (!getAuthenticatedUsername().equals(articleComments.get(0).getUsername())) {
 				data.put("status", Status.ACCESS_DENIED_ERROR);
 				data.put("reason", "只能删除自己的评论！");
+			} else {
+				service.deleteArticleComment(articleComment.getComment_id());
+				data.put("status", Status.SUCCESS);
+				data.put("reason", "OK");
 			}
-		} catch (Exception e) {
-			data.put("status", Status.DB_ERROR);
-			data.put("reason", "数据库错误");
-		}
-		try {
-			service.deleteArticleComment(articleComment.getComment_id());
-			data.put("status", Status.SUCCESS);
-			data.put("reason", "OK");
 		} catch (Exception e) {
 			data.put("status", Status.DB_ERROR);
 			data.put("reason", "数据库错误");

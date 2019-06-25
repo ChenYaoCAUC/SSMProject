@@ -1,3 +1,6 @@
+$(function(){
+	$('#upload').attr('src',"/SSMProject/user/getImage?user=chenyao");
+});
 function writeArticle(){
 	var title = $("#texttitle").val();
 	var content = $("#textcontent").val();

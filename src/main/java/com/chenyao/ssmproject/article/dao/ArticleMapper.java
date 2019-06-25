@@ -15,6 +15,9 @@ import com.chenyao.ssmproject.article.model.Article;
 public interface ArticleMapper {
 	@Select("select * from article;")
 	public List<Article> refresh();
+	@Select("select id,author,title,content from article,like_article\n" + 
+			"where article.id=like_article.article_id group by id order by count(id) desc;")
+	public List<Article> refreshByLike(); 
 	@Select("select * from article where author=#{user};")
 	public List<Article> refreshByUsername(@Param("user") String username);
 	@Select("select * from article where title like #{title};")
@@ -26,6 +29,6 @@ public interface ArticleMapper {
 	@Update("update article set title=#{title},content=#{content} where id=#{id};")
 	public int update(Article article);
 	@Delete("delete from article where id=#{id}")
-	public int delete(@Param("id") String id);		
+	public int delete(Article article);		
 	
 }

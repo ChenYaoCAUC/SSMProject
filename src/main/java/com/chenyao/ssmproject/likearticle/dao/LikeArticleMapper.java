@@ -1,11 +1,14 @@
 package com.chenyao.ssmproject.likearticle.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 
+import com.chenyao.ssmproject.article.model.Article;
 import com.chenyao.ssmproject.likearticle.model.LikeArticle;
 
 @Repository

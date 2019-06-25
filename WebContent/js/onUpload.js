@@ -1,3 +1,6 @@
+$(function(){
+	$('#upload').attr('src',"/SSMProject/user/getImage?user=chenyao");
+});
 function onUpload(){
 	var formData = new FormData(document.getElementById("uploadForm"));
 	$.ajax({
@@ -17,4 +20,5 @@ function onUpload(){
 	     	 }
 	      }
 	});
+	
 }

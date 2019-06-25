@@ -18,8 +18,8 @@ public interface ConcernMapper {
 	public List<ConcernModel> select();
 	@Insert("insert into concern values(#{follower},#{wasfuns});")
 	public int insert(ConcernModel concern);
-	@Delete("delete from concern where follower=#{follower}")
-	public int delete(@Param("follower") String follwer);
+	@Delete("delete from concern where follower=#{follower} and wasfuns=#{wasfuns}")
+	public int delete(@Param("follower") String follwer,@Param("wasfuns") String wasfuns);
 	public Integer selectcount(ConcernModel concern);
 	public Integer selectnum(ConcernModel concern);
 	

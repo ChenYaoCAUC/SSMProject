@@ -6,69 +6,11 @@
  <link href="/SSMProject/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" >
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-<div class="btn-group">
-  <button type="button" class="btn btn-primary" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    我的
-  </button>
-  <div class="dropdown-menu">
-    <a class="dropdown-item" href="/SSMProject/me.html">个人中心</a>
-    <div class="dropdown-divider"></div>
-    <a class="dropdown-item" href="#">设置</a>
-    <div class="dropdown-divider"></div>
-    <a class="dropdown-item"  href="/SSMProject/signin.html?logout=1">退出</a>
-  </div>
-</div>
-  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-      <li class="nav-item">
-        <a class="nav-link" href="/SSMProject/hotsearch.html">热搜</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/SSMProject/recommend.html">推荐</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/SSMProject/notice.html">关注</a>
-      </li>
-       <li class="nav-item">
-        <a class="btn btn-link" href="/SSMProject/index.html">返回首页</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search">
-      <button class="btn btn-primary" type="submit">搜索</button>
-    </form>
-  </div>
-</nav>
-<nav>
-<button type="button" class="btn btn-primary" onclick='refresh()'>刷新页面</button>
-</nav>
-<div id="article">
- <div class="card text-center">
-  <div class="card-body">
-    <h5 class="card-title">文章标题</h5>
-    <p class="card-text">文章内容</p>
-  </div>
-  <div class="card-footer text-muted" id="date">
-    1 days ago
-  </div>
-   <div class="accordion" id="accordionExample">
-   <div class="card">
-    <div class="card-fotter" id="headingOne">
-      <h2 class="mb-0">
-        <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-         查看 评论
-        </button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" >写评论</button>
-      </h2>
-    </div>
-   		<div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-    	<div id="articlecomment" class="card-body">列出所有的评论</div>
-   	  </div>
-  	</div>  
-	</div>
-	</div>
-  </div>
+<div id="navtop"></div>
+<ul>
+<li class="list-group-item list-group-item-primary">这是热搜</li>
+</ul>
+<div id="article"></div>
 	<!-- 写评论弹出的框 -->
 	<div class="modal fade" id="writeModel" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
@@ -115,5 +57,6 @@
 <script src="/SSMProject/lib/jquery/jquery-3.3.1.min.js"></script>
 <script src="/SSMProject/lib/popper/popper.min.js"></script>
 <script src="/SSMProject/lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="/SSMProject/js/hotsearch.js"></script>
+<script src="/SSMProject/js/refreshByLike.js"></script>
+<script src="/SSMProject/js/main.js"></script>
 </html>

@@ -15,7 +15,7 @@
     <!-- 保护根目录下所有的文件 -->
    <intercept-url pattern="/**" access="authenticated" /> 
         <!-- 禁止访问上传目录 -->
-        <intercept-url pattern="/uploads/**" access="none" />
+		<intercept-url pattern="/uploads/**" access="none" />
         <headers>
             <xss-protection />
         </headers>
